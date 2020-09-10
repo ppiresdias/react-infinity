@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-
-// create new array and add a new name to the new array without changing the original array
-// let names = ['Bryan', 'Patty', 'Acosta', 'Pires'];
-// let newName = [...names, 'Dias'];
-
-// console.log(newName);
+import update from 'immutability-helper';
 
 export default class Immutable extends Component {
 	constructor() {
@@ -30,36 +25,19 @@ export default class Immutable extends Component {
 
 	clickBtn = () => {
 		console.log(this.state);
-
-		// Add name
-		// const newState = {
-		// 	names: [...this.state.names, 'Dias']
-		// };
-
-		// Remove name
-		// const newState = {
-		// 	names: this.state.names.filter(name => name !== 'Pires')
-		// };
-
-		// Merge 2 arrays
-		// const newState = { both: [...this.state.names, ...this.state.children] };
-
-		// Sort array
-		const newState = { names: this.state.names.slice().sort() };
-
-		// const newGrade = {
-		// 	...this.state.user.grades,
-		// 	math: 'A+'
-		// };
-		// Object.assign({}, this.state.user.grades, {
-		// 	math: 'A+'
-		// });
-
-		// const newUser = Object.assign({}, this.state.user, {
-		// 	name: 'Bryan',
-		// 	grades: newGrade
-		// });
-
+		const newState = update(this.state, {
+			background: { $set: 'red' },
+			children: {
+				$set: ['Andrew']
+			},
+			user: {
+				grades: {
+					math: {
+						$set: 'C+'
+					}
+				}
+			}
+		});
 		this.setState(newState, () => {
 			console.log(this.state);
 		});
@@ -67,7 +45,7 @@ export default class Immutable extends Component {
 	};
 
 	changeToActive = () => {
-		if (this.state.names[0] == 'Acosta') {
+		if (this.state.children[0] == 'Andrew') {
 			return 'active';
 		} else {
 			return '';
