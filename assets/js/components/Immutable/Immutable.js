@@ -25,17 +25,16 @@ export default class Immutable extends Component {
 
 	clickBtn = () => {
 		console.log(this.state);
+
+		const newGrades = update(this.state.user.grades, {
+			$merge: {
+				art: 'B-',
+				biology: 'D'
+			}
+		});
 		const newState = update(this.state, {
-			background: { $set: 'red' },
-			children: {
-				$set: ['Andrew']
-			},
 			user: {
-				grades: {
-					math: {
-						$set: 'C+'
-					}
-				}
+				grades: { $set: newGrades }
 			}
 		});
 		this.setState(newState, () => {
@@ -45,7 +44,7 @@ export default class Immutable extends Component {
 	};
 
 	changeToActive = () => {
-		if (this.state.children[0] == 'Andrew') {
+		if (this.state.user.grades.biology == 'D') {
 			return 'active';
 		} else {
 			return '';
