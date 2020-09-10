@@ -1,4 +1,5 @@
 /* REACT Manual/Automatic Counter Project */
+/* React Infinity Course CodingPhase.com */
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
