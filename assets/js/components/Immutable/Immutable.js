@@ -27,7 +27,7 @@ export default class Immutable extends Component {
 		console.log(this.state);
 
 		const newChildren = update(this.state.children, {
-			$push: ['Andrew']
+			$splice: [[1, 1]] // remove position 1 to 1
 		});
 
 		const newState = update(this.state, {
@@ -41,7 +41,7 @@ export default class Immutable extends Component {
 	};
 
 	changeToActive = () => {
-		if (this.state.children[3] == 'Andrew') {
+		if (this.state.children[1] !== 'Sabrina') {
 			return 'active';
 		} else {
 			return '';
