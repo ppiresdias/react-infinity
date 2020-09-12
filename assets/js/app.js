@@ -3,7 +3,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 // import Counter from './components/Counter/Counter';
-import Immutable from './components/Immutable/Immutable';
+// import Immutable from './components/Immutable/Immutable';
+import BillsApp from './components/BillsApp/BillsApp';
 
 class App extends Component {
 	constructor() {
@@ -12,9 +13,9 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<div className={'container'}>
+			<div className="app">
 				{/* <Counter status="manual" /> */}
-				<Immutable />
+				<BillsApp></BillsApp>
 			</div>
 		);
 	}
