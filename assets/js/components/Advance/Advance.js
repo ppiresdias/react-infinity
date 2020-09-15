@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 export default class Advanced extends Component {
 	constructor() {
@@ -9,6 +9,7 @@ export default class Advanced extends Component {
 	render() {
 		// return <div id="Advanced">Text</div>;
 		//Fragment: directly return what's imbedded within parent component without having to add a parent element
-		return <>Text</>;
+		// use fragment tag to pass in props, keys, properties, etc.
+		return <Fragment>Text</Fragment>;
 	}
 }
