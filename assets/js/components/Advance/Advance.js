@@ -7,6 +7,8 @@ export default class Advanced extends Component {
 	}
 
 	render() {
-		return <div id="Advanced"></div>;
+		// return <div id="Advanced">Text</div>;
+		//Fragment: directly return what's imbedded within parent component without having to add a parent element
+		return <>Text</>;
 	}
 }
