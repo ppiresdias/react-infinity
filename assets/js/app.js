@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 // import Immutable from './components/Immutable/Immutable';
 import BillsApp from './components/BillsApp/BillsApp';
 import Advance from './components/Advance/Advance';
+import ReactHooks from './components/Advance/ReactHooks';
 
 class App extends Component {
 	constructor() {
@@ -17,7 +18,8 @@ class App extends Component {
 			<div className="container">
 				{/* <Counter status="manual" /> */}
 				{/* <BillsApp></BillsApp> */}
-				<Advance></Advance>
+				{/* <Advance></Advance> */}
+				<ReactHooks />
 			</div>
 		);
 	}
